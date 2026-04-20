@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { BookOpen, Headset, LifeBuoy, MessageSquareText } from 'lucide-react';
+import { BookOpen, Headphones, LifeBuoy, MessageSquareText } from 'lucide-react';
 
 export default function HelpPage() {
   return (
