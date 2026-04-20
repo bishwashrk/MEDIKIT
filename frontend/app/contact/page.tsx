@@ -14,7 +14,7 @@ export default function ContactPage() {
                 Need help with appointments, payments, or account access? Reach us through any channel below.
               </p>
             </div>
-            <Headset className="h-10 w-10 shrink-0 text-emerald-100" />
+            <Headphones className="h-10 w-10 shrink-0 text-emerald-100" />
           </div>
         </section>
 
