@@ -117,3 +117,4 @@ API docs available at: `http://localhost:8000/api/v1/docs/`
 
 This project is for educational purposes.
 # MEDIKIT
+# MEDIKIT
