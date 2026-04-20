@@ -22,7 +22,7 @@ export default function HelpPage() {
               Browse FAQ
             </Link>
             <Link href="/contact" className="inline-flex items-center gap-2 rounded-lg border border-white/50 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10">
-              <Headset className="h-4 w-4" />
+              <Headphones className="h-4 w-4" />
               Contact Support
             </Link>
           </div>
