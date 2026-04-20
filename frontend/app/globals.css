@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 15, 23, 42;
+  --background-start-rgb: 248, 250, 252;
+  --background-end-rgb: 240, 249, 255;
+}
+
+body {
+  font-family: var(--font-sans), 'Segoe UI', sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background:
+    radial-gradient(1200px 700px at 0% -10%, rgba(14, 165, 233, 0.14), transparent 60%),
+    radial-gradient(1000px 650px at 100% -20%, rgba(14, 116, 144, 0.1), transparent 58%),
+    linear-gradient(180deg, rgb(var(--background-end-rgb)) 0%, rgb(var(--background-start-rgb)) 100%);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
+  font-family: var(--font-display), var(--font-sans), sans-serif;
+  letter-spacing: -0.012em;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e2e8f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* Leaflet map fixes */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+/* Form input focus states */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.18);
+  border-color: rgb(14 116 144 / 0.42);
+}
+
+/* Button transitions */
+.btn-transition {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-transition:hover {
+  transform: translateY(-1px);
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  box-shadow: 0 12px 24px -18px rgba(2, 132, 199, 0.5);
+}
