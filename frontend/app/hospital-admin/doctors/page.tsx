@@ -249,7 +249,7 @@ export default function DoctorsPage() {
                         {doctor.experience_years} years experience
                       </div>
                     )}
-                    {doctor.consultation_fee > 0 && (
+                    {(doctor.consultation_fee ?? 0) > 0 && (
                       <div className="flex items-center gap-2 text-sm text-gray-600">
                         <DollarSign className="h-4 w-4" />
                         Rs. {doctor.consultation_fee}
