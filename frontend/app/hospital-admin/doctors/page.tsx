@@ -243,7 +243,7 @@ export default function DoctorsPage() {
                         {doctor.qualification}
                       </div>
                     )}
-                    {doctor.experience_years > 0 && (
+                    {(doctor.experience_years ?? 0) > 0 && (
                       <div className="flex items-center gap-2 text-sm text-gray-600">
                         <Clock className="h-4 w-4" />
                         {doctor.experience_years} years experience
