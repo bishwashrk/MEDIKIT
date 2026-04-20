@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, Headset, Mail, MapPin, Phone } from 'lucide-react';
+import { ArrowLeft, Headphones, Mail, MapPin, Phone } from 'lucide-react';
 
 export default function ContactPage() {
   return (
