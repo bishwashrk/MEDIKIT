@@ -1,14 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
-import { useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useMutation } from '@tanstack/react-query';
 import { getErrorMessage, paymentsApi } from '@/lib/api';
 import { AlertCircle, CheckCircle, Loader2, XCircle } from 'lucide-react';
 
-export default function EsewaSuccessPage() {
+function EsewaSuccessContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [status, setStatus] = useState<'verifying' | 'success' | 'failed'>('verifying');
@@ -115,5 +114,23 @@ export default function EsewaSuccessPage() {
         )}
       </div>
     </div>
+  );
+}
+
+export default function EsewaSuccessPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+          <div className="w-full max-w-lg bg-white rounded-2xl shadow-sm border border-gray-100 p-8 text-center">
+            <Loader2 className="h-10 w-10 animate-spin text-primary-600 mx-auto mb-4" />
+            <h1 className="text-xl font-bold text-gray-900 mb-2">Verifying Payment</h1>
+            <p className="text-gray-600 mb-6">Verifying your payment with eSewa...</p>
+          </div>
+        </div>
+      }
+    >
+      <EsewaSuccessContent />
+    </Suspense>
   );
 }
