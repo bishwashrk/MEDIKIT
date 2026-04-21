@@ -27,7 +27,7 @@ import { Hospital } from '@/types';
 
 type StatusFilter = 'all' | 'pending' | 'active' | 'suspended' | 'inactive';
 
-export default function HospitalsPage() {
+function HospitalsContent() {
   const searchParams = useSearchParams();
   const initialStatus = (searchParams.get('status') as StatusFilter) || 'all';
   
@@ -414,5 +414,20 @@ export default function HospitalsPage() {
         </div>
       )}
     </div>
+  );
+}
+
+
+export default function HospitalsPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex items-center justify-center py-12">
+          <Loader2 className="h-8 w-8 animate-spin text-primary-600" />
+        </div>
+      }
+    >
+      <HospitalsContent />
+    </Suspense>
   );
 }
